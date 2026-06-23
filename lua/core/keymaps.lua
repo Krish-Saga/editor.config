@@ -2,6 +2,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Vim select using Shift J and K 
+
 -- Disable the spacebar key's default behaviour in  Normal and Visual modes 
 vim.keymap.set({ 'n', 'v'} , '<Space>', '<Nop>', {silent = true})
 
@@ -10,6 +12,7 @@ local opts = { noremap = true , silent = true }
 
 -- save file 
 vim.keymap.set( 'n', '<C-s>', '<cmd> w <CR>', opts ) 
+vim.keymap.set( 'n', '<leader>w', '<cmd> w <CR>', opts ) 
 -- save file without auto-formatting
 vim.keymap.set ( 'n' , '<leader>wn',  '<cmd> w <CR> <cmd> !cargo fmt <CR>', opts)
 
@@ -25,9 +28,6 @@ vim.keymap.set( 'n', '<C-d>', '<C-d>zz' , opts)
 -- Neotree keymap for side file explorer
 vim.keymap.set( 'n' , '<leader>e' , '<cmd> Neotree toggle <CR>' , opts) 
 
--- Telescope keymap 
-vim.keymap.set( 'n' , '<leader>f' , '<cmd> Telescope <CR>' , opts ) 
-vim.keymap.set( 'n' , '<leader>th' , '<cmd> Telescope colorscheme <CR>' , opts) 
 
 -- Resize buffer 
 vim.keymap.set('n', '<Up>' , ':resize -2<CR>', opts)
@@ -38,7 +38,7 @@ vim.keymap.set('n', '<Right>' , ':vertical resize +2<CR>', opts)
 -- Buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set('n', '<leader>x', ':Bdelete!<CR>', opts)
+vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts)
 vim.keymap.set('n', '<leader>b', ':bnext<CR>', opts)
 
 -- Windows management

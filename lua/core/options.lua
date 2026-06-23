@@ -1,4 +1,10 @@
 -- Numbers in nvim 
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+virtual_lines = true,
+})
+vim.o.background = "dark"
+vim.o.guicursor = ""
 vim.o.relativenumber = true
 vim.wo.number = true
 vim.o.clipboard = 'unnamedplus' -- Sync nvim and OS keyboard  
