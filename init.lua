@@ -1,8 +1,5 @@
 math.randomseed(os.time())
-require ('core.keymaps')
-require('core.options')
-require('lazyvim')
-vim.cmd.colorscheme "catppuccin-mocha"
-
-
-
+require("core.keymaps")
+require("core.options")
+require("lazyvim")
+vim.cmd.colorscheme("catppuccin-mocha")
