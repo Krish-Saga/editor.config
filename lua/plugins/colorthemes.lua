@@ -1,9 +1,31 @@
--- vim.keymap.set('n' , '<leader>bg' , function() bg_transparent = not bg_transparent krish() end, {noremap = true , silent = true });
+local bg_transparent = false
+
 return {
-	{
-		"folke/tokyonight.nvim",
-		lazy = true,
-		opts = { style = "moon" },
-	},
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+
+        opts = function()
+            return {
+                transparent_background = bg_transparent,
+            }
+        end,
+
+        keys = {
+            {
+                "<leader>bg",
+                function()
+                    bg_transparent = not bg_transparent
+
+                    require("catppuccin").setup({
+                        transparent_background = bg_transparent,
+                    })
+
+                    vim.cmd.colorscheme("catppuccin")
+                end,
+                desc = "Toggle Transparent Background",
+            },
+        },
+    },
 }

@@ -5,6 +5,9 @@ return {
 			ensure_installed = {
 				"rust_analyzer",
 				"lua_ls",
+				"emmet_language_server",
+				"cssls",
+				"superhtml",
 			},
 		},
 		dependencies = {

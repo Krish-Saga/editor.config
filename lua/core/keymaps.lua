@@ -9,14 +9,16 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- for conciseness
 local opts = { noremap = true, silent = true }
+-- remove noti
+vim.keymap.set("n", "<leader>rn", function()
+	require("notify").dismiss({ silent = true, pending = true })
+end, { desc = "Dismiss all notifications" })
 
 -- save file
 vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
 vim.keymap.set("n", "<leader>w", "<cmd> w <CR>", opts)
--- save file without auto-formatting
-vim.keymap.set("n", "<leader>wn", "<cmd> w <CR> <cmd> !cargo fmt <CR>", opts)
-
 -- quit file
+vim.keymap.set("n", "<leader>q", "<cmd> q <CR>", opts)
 vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", opts)
 
 -- delete single character without copying into register
@@ -25,14 +27,11 @@ vim.keymap.set("n", "x", '"_x', opts)
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 
--- Neotree keymap for side file explorer
-vim.keymap.set("n", "<leader>e", "<cmd> Neotree toggle <CR>", opts)
-
 -- Resize buffer
 vim.keymap.set("n", "<Up>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<Down>", ":resize +2<CR>", opts)
-vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<Left>", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<Right>", ":vertical resize -2<CR>", opts)
 
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
