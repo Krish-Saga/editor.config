@@ -8,7 +8,7 @@ return {
 			javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
 			typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-			css = { "stylelint", "prettier", stop_after_first = true },
+			css = { "biome", "prettier", stop_after_first = true },
 			html = { "superhtml", stop_after_first = true },
 			json = { "biome", "prettier", stop_after_first = true },
 			kdl = { "kdlfmt" },
